@@ -20,18 +20,22 @@ public class ChartCreator {
     private int meanGenerationTime;
 
     public Chart createChart(List<Block> blocks) {
+        List<ChartEntry> chartEntries = convertToChartEntries(blocks);
+
+        return getChart(chartEntries);
+    }
+
+    private Chart getChart(List<ChartEntry> chartEntries) {
         Chart chart = new Chart();
 
         chart.setLegendX("messages.chart.legend.x");
         chart.setLegendY("messages.chart.legend.y");
 
-        if (blocks.isEmpty()) {
+        if (chartEntries.isEmpty()) {
             chart.setMessage("messages.chart.no.data.found");
         }
 
-        List<ChartEntry> chartEntries = convertToChartEntries(blocks);
         chart.setEntries(chartEntries);
-
         return chart;
     }
 

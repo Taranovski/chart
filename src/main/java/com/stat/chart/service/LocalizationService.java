@@ -54,6 +54,7 @@ public class LocalizationService {
                     f.set(object, message);
                 }
             } else if (f.getType().isAnnotationPresent(Localized.class)) {
+                f.setAccessible(true);
                 localizeObject(f.get(object), locale);
             }
         }
