@@ -17,7 +17,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     public InternalResourceViewResolver staticViewResolver() {
         InternalResourceViewResolver bean = new InternalResourceViewResolver();
         bean.setPrefix("/static/");
-        bean.setSuffix(".html");
         return bean;
     }
 

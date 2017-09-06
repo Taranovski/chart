@@ -30,7 +30,7 @@ nbdist/
 /tmp
 
 # dependencies
-/node_modules
+node_modules
 
 # IDEs and editors
 .c9/
@@ -61,3 +61,8 @@ testem.log
 #System Files
 .DS_Store
 Thumbs.db
+
+src/main/resources/static/*
+
+package-lock.json
+/node
