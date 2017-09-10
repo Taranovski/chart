@@ -16,9 +16,10 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.chartDataProviderService.fetchChartData()
+    var subscription = this.chartDataProviderService.fetchChartData()
       .subscribe((data: ChartResponse) => {
         this.chartData = data;
+        subscription.unsubscribe();
       });
   }
 

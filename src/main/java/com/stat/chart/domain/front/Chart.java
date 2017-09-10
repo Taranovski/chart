@@ -16,6 +16,9 @@ public class Chart {
     private String legendY;
     @Localized
     private String message;
+    @Localized
+    private String title;
+
     private List<ChartEntry> entries;
 
     public void setLegendX(String legendX) {
@@ -48,5 +51,13 @@ public class Chart {
 
     public List<ChartEntry> getEntries() {
         return entries;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

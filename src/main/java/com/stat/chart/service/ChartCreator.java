@@ -30,6 +30,7 @@ public class ChartCreator {
 
         chart.setLegendX("messages.chart.legend.x");
         chart.setLegendY("messages.chart.legend.y");
+        chart.setTitle("messages.chart.legend.title");
 
         if (chartEntries.isEmpty()) {
             chart.setMessage("messages.chart.no.data.found");

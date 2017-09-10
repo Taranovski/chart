@@ -1,8 +1,15 @@
-<div>
-  Stats for most recent blocks mean-relative generation time
-</div>
 <div *ngIf="chartData">
   <div *ngIf="chartData.message">{{chartData.message}}</div>
+  <div *ngIf="chartData.title">{{chartData.title}}</div>
+  <canvas *ngIf="chartData.entries.length > 0" baseChart width="600" height="300"
+          [data]="lineChartData()"
+          [labels]="lineChartLabels()"
+          [options]="lineChartOptions"
+          [colors]="lineChartColors"
+          [legend]="lineChartLegend"
+          [chartType]="lineChartType"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
 
   <table *ngIf="chartData.entries.length > 0" border="1px">
     <tr>
