@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ChartDataProviderService, ChartResponse } from './chart';
+//import { ChartResponse } from '../domain';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ChartApp';
+
+  private chartData: ChartResponse;
+
+  constructor(private chartDataProviderService: ChartDataProviderService) {
+  }
+
+  ngOnInit() {
+    this.chartDataProviderService.fetchChartData()
+      .subscribe((data: ChartResponse) => {
+        this.chartData = data;
+      });
+  }
+
 }

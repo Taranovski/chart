@@ -1,0 +1,17 @@
+<div>
+  Stats for most recent blocks mean-relative generation time
+</div>
+<div *ngIf="chartData">
+  <div *ngIf="chartData.message">{{chartData.message}}</div>
+
+  <table *ngIf="chartData.entries.length > 0" border="1px">
+    <tr>
+      <th>{{chartData.legendX}}</th>
+      <th>{{chartData.legendY}}</th>
+    </tr>
+    <tr *ngFor="let dataPoint of chartData.entries">
+      <td>{{dataPoint.x}}</td>
+      <td>{{dataPoint.y}}</td>
+    </tr>
+  </table>
+</div>
